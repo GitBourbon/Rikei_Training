@@ -34,13 +34,12 @@ public class Fraction {
         return denominator != 0;
     }
 
-    public void showFraction(double numerator, double denominator) {
-        if (isFraction(numerator, denominator)) {
-            System.out.println("Fraction is: " + numerator + "/" + denominator);
-        } else
-            System.out.println("This is not valid fraction");
-
-
+    public String showFraction(Fraction fraction) {
+        if (isFraction(fraction.getNumerator(), fraction.getDenominator())) {
+            String result = fraction.getNumerator() + "/" + fraction.getDenominator();
+            return result;
+        }
+        return null;
     }
 
     public static double getUCLN(double numberA, double numberB) {
@@ -66,11 +65,16 @@ public class Fraction {
 
     }
 
-//    public double doReverseFraction(double numerator, double denominator) {
-//        double fraction = numerator / denominator;
-//        double reverseFraction =
-//
-//    }
+    public String doReverseFraction(double numerator, double denominator) {
+        if (isFraction(this.getNumerator(), this.getDenominator())) {
+            double numerator2 = denominator;
+            double deminator2 = numerator;
+            String result = reduceFractions(numerator2, deminator2);
+            return result;
+        }
+        return null;
+
+    }
 
     public String addFraction(Fraction fraction) {
         if (isFraction(this.getNumerator(), this.getDenominator())) {
@@ -97,7 +101,30 @@ public class Fraction {
 
         }
         return null;
+    }
 
+    public String mulFaction(Fraction fraction) {
+        if (isFraction(this.getNumerator(), this.getDenominator())) {
+            if (fraction.getDenominator() != 0) {
+                double numerator = this.getNumerator() * fraction.getNumerator();
+                double denominator = this.getDenominator() * fraction.getDenominator();
+                String result = reduceFractions(numerator, denominator);
+                return result;
+            }
+        }
+        return null;
+    }
+
+    public String divFraction(Fraction fraction) {
+        if (isFraction(this.getNumerator(), this.getDenominator())) {
+            if (fraction.getDenominator() != 0) {
+                double numerator = this.getNumerator() * fraction.getDenominator();
+                double denominator = this.denominator * fraction.getNumerator();
+                String result = reduceFractions(numerator, denominator);
+                return result;
+            }
+        }
+        return null;
     }
 
 }

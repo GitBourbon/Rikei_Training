@@ -1,13 +1,13 @@
 package student;
 
 public class Student {
-    private String name;
+    private String studentCode;
     private float avgMark;
     private int age;
     private String group;
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStudentCode(String studentCode) {
+        this.studentCode = studentCode;
     }
 
     public void setAvgMark(float avgMark) {
@@ -22,8 +22,8 @@ public class Student {
         this.group = group;
     }
 
-    public String getName() {
-        return name;
+    public String getStudentCode() {
+        return studentCode;
     }
 
     public float getAvgMark() {
@@ -43,8 +43,8 @@ public class Student {
 
     }
 
-    Student(String name, float avgMark, int age, String group) {
-        this.name = name;
+    Student(String studentCode, float avgMark, int age, String group) {
+        this.studentCode = studentCode;
         this.avgMark = avgMark;
         this.age = age;
         this.group = group;
@@ -53,14 +53,14 @@ public class Student {
 
 
     private boolean isValidInfor() {
-        return (age >= 18) && (!(avgMark < 0) && !(avgMark > 10)) && (group.startsWith("A") || group.startsWith("C"));
+        return (studentCode.length() == 8 && age >= 18) && (!(avgMark < 0) && !(avgMark > 10)) && (group.startsWith("A") || group.startsWith("C"));
 
     }
 
     public void showInfor() {
 
         if (isValidInfor()) {
-            System.out.println("Name is: " + getName());
+            System.out.println("Name is: " + getStudentCode());
             System.out.println("Age is: " + getAge());
             System.out.println("Group is: " + getGroup());
             System.out.println("Average is: " + getAvgMark());

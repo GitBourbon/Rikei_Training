@@ -21,14 +21,14 @@ public class Main {
                 System.out.println("Tam giác deu ");
                 break;
             case 2:
-                System.out.println("tam giac vuong can");
+                System.out.println("Tam giac vuong can");
                 break;
             case 3:
-                System.out.println("tam giac can");
+                System.out.println("Tam giac can");
                 break;
 
             case 4:
-                System.out.println(" Tam giác vuông ");
+                System.out.println("Tam giác vuông ");
                 break;
 
             case 5:
