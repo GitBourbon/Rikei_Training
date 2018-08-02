@@ -44,6 +44,10 @@ public class Student {
     }
 
     Student(String name, float avgMark, int age, String group) {
+        this.name = name;
+        this.avgMark = avgMark;
+        this.age = age;
+        this.group = group;
 
     }
 
@@ -53,7 +57,7 @@ public class Student {
 
     }
 
-   public void showInfor() {
+    public void showInfor() {
 
         if (isValidInfor()) {
             System.out.println("Name is: " + getName());
